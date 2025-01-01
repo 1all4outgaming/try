@@ -3,108 +3,196 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tables</title>
-    <style>
-        /* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-
-header {
-  background-color: #4caf50;
-  color: white;
-  text-align: center;
-  padding: 1rem 0;
-}
-
-h1 {
-  margin: 0;
-}
-
-/* Table Styles */
-table {
-  width: 80%;
-  margin: 2rem auto;
-  border-collapse: collapse;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-thead {
-  background-color: #4caf50;
-  color: white;
-}
-
-th,
-td {
-  padding: 1rem;
-  text-align: center;
-  border: 1px solid #ddd;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #f2f2f2; /* Light gray for even rows */
-}
-
-tbody tr:hover {
-  background-color: #f1c40f; /* Highlight row on hover */
-  color: #fff;
-}
-
-th {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-}
-
-td {
-  font-size: 1rem;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem 0;
-  background-color: #f4f4f4;
-  border-top: 1px solid #ddd;
-}
-
-    </style>
+    <title>Login Page</title>
+    <style>/* General Reset */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        body {
+          font-family: 'Arial', sans-serif;
+          line-height: 1.6;
+          background: linear-gradient(120deg, #6a11cb, #2575fc);
+          color: #fff;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          padding: 20px;
+        }
+        
+        header {
+          margin-bottom: 20px;
+        }
+        
+        header h1 {
+          font-size: 2.5rem;
+          text-align: center;
+          color: #fff;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        main {
+          width: 100%;
+          max-width: 400px;
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+          backdrop-filter: blur(10px);
+        }
+        
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+        
+        label {
+          font-size: 1rem;
+          margin-bottom: 5px;
+          display: block;
+        }
+        
+        input, select, textarea {
+          width: 100%;
+          padding: 10px;
+          font-size: 1rem;
+          border: 1px solid rgba(255, 255, 255, 0.5);
+          border-radius: 5px;
+          background: rgba(255, 255, 255, 0.1);
+          color: #fff;
+          outline: none;
+        }
+        
+        input::placeholder,
+        textarea::placeholder {
+          color: rgba(255, 255, 255, 0.7);
+        }
+        
+        input:focus, select:focus, textarea:focus {
+          border-color: #fff;
+          background: rgba(255, 255, 255, 0.2);
+        }
+        
+        textarea {
+          resize: none;
+          height: 100px;
+        }
+        
+        button {
+          background: #ff5a5f;
+          border: none;
+          padding: 10px 15px;
+          font-size: 1rem;
+          color: #fff;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background 0.3s ease;
+        }
+        
+        button:hover {
+          background: #ff8085;
+        }
+        
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 10px;
+        }
+        
+        /* Subscriptions Section */
+        input[type="radio"] {
+          margin-right: 10px;
+        }
+        
+        /* Link Styling */
+        a {
+          text-decoration: none;
+        }
+        
+        a button {
+          width: 100%;
+          text-align: center;
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 500px) {
+          main {
+            padding: 15px;
+          }
+        
+          header h1 {
+            font-size: 2rem;
+          }
+        }
+        </style>
   </head>
   <body>
     <header>
-      <h1><b>tables</b></h1>
+      <h1><b>Login Page</b></h1>
     </header>
     <main>
-      <table>
-        <thead>
-          <tr>
-            <th>Names</th>
-            <th>role</th>
-            <th>salry</th>
-          </tr>
-        </thead>
+      <div>
+        <form action="">
+          <div>
+            <label for="username"><b>username :</b></label>
+            <input
+              id="username"
+              type="text"
+              placeholder="Enter username"
+              required
+            />
+          </div>
+          <br />
+          <div>
+            <label for="email"><b>email : </b></label>
+            <input id="email" type="email" placeholder="Enter email" required />
+          </div>
+          <br />
+          <div>
+            <label for="password"><b>password : </b></label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter password"
+              required
+            />
+          </div>
+          <br />
+          <div>
+            <label for="gender"><b>gender :</b></label>
+            <select name="gender" id="gender" required>
+              <option value="male">male</option>
+              <option value="female">female</option>
+              <option value="other">other</option>
+            </select>
+          </div>
+          <br />
+          <div>
+            <h3><b>Subcriptions Plans</b></h3>
+            <input id="basic" type="radio" required name="Subcriptions" />
+            <label for="basic"><b>basic</b></label>
 
-        <tbody>
-          <tr>
-            <td>Yogesh Yadav</td>
-            <td>Ai maker</td>
-            <td>$10000</td>
-          </tr>
-          <tr>
-            <td>Bimla Devi</td>
-            <td>naali saaf</td>
-            <td>$100</td>
-          </tr>
+            <input id="free" type="radio" required name="Subcriptions" />
+            <label for="free"><b>free</b></label>
 
-          <tr>
-            <td>Anjali Yadav</td>
-            <td>collage nahi jaati...</td>
-            <td>$0</td>
-          </tr>
-        </tbody>
-      </table>
+            <input id="vip" type="radio" required name="Subcriptions" />
+            <label for="vip"><b>vip</b></label>
+          </div>
+          <br>
+          <div>
+            <label for="comment"><b>Comment Box :</b></label>
+            <textarea name="comment" id="comment" placeholder="optional"></textarea>
+          </div>
+          <br>
+          <div><a href="https://www.youtube.com/"><button><h3>click here</h3></button></a></div>
+        </form>
+      </div>
     </main>
     <footer></footer>
   </body>
